@@ -6,19 +6,25 @@ if rhandempty ?? 0
         stop
     endif
 endif
+
 // Check weight
 if weight >= maxweight 
     overhead 'ENCUMBERED'
     // Organizer to pack animal
+    organizer 20
 endif
+
 // Check tracking enemy
 if insysmsg 'Now tracking' or insysmsg 'Distance to destination'
     overhead 'ESCAPING'
     // Recall script
+    script 'Recall'
 endif
+
 // Check World Save
 if insysmsg 'world will save'
     for 30
+        wait 1000
         overhead 'Paused for World Save'
         if insysmsg 'save complete'
             overhead 'Save Complete! - Continue Mining!' 88
@@ -26,4 +32,10 @@ if insysmsg 'world will save'
         endif
     endfor
 endif
+
 overhead 'Mining'
+hotkey 'Use item in Hand'
+waitfortarget 500
+target 'self'
+wait 2500
+loop
