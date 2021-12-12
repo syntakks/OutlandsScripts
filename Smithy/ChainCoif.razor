@@ -1,0 +1,28 @@
+if insysmsg 'world will save'
+    for 30
+        wait 1000
+        overhead 'Paused for World Save'
+        if insysmsg 'save complete'
+            overhead 'Save Complete! - Continue Smithing!' 88
+            replay
+        endif
+    endfor
+endif
+
+if skill 'Blacksmith' >= 75
+    script 'Blacksmith'
+endif
+
+if not findtype 5091 backpack 
+    script 'Restock'
+endif
+
+if count 'ingots' < 8
+    script 'Restock'
+endif
+
+overhead 'Chainmail Coif'
+gumpresponse 7
+wait 2000
+
+loop

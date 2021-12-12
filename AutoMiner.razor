@@ -1,0 +1,29 @@
+// Check Pickaxe
+if rhandempty ?? 0
+    dress 'Pickaxe'
+    if insysmsg 'were not found'
+        overhead 'OUT OF PICKAXE'
+        stop
+    endif
+endif
+// Check weight
+if weight >= maxweight 
+    overhead 'ENCUMBERED'
+    // Organizer to pack animal
+endif
+// Check tracking enemy
+if insysmsg 'Now tracking' or insysmsg 'Distance to destination'
+    overhead 'ESCAPING'
+    // Recall script
+endif
+// Check World Save
+if insysmsg 'world will save'
+    for 30
+        overhead 'Paused for World Save'
+        if insysmsg 'save complete'
+            overhead 'Save Complete! - Continue Mining!' 88
+            replay
+        endif
+    endfor
+endif
+overhead 'Mining'

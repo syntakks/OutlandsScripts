@@ -1,0 +1,28 @@
+overhead 'Restocking...'
+restock 1
+waitfortarget 
+hotkey 'Target Self'
+wait 1000
+
+if not findtype 5091 backpack
+    overhead 'We must be outta hammers!' 84
+    stop
+endif
+
+if count 'ingots' < 20
+    overhead 'Go get some more iron fool!'
+    stop
+endif
+
+overhead 'Recycling...'
+gumpclose 
+wait 1000
+dclicktype 5091 backpack
+waitforgump 949095101
+gumpresponse 3
+waitfortarget 
+waitforgump 949095101
+target 'self'
+wait 1000
+overhead 'Restarting...'
+script 'Blacksmith'

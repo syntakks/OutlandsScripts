@@ -1,0 +1,104 @@
+if not findtype 5091 backpack
+    script 'Restock'
+endif
+
+overhead 'Skill check...'
+if skill 'Blacksmith' >= 50 and skill 'Blacksmith' < 65
+    overhead '50-64.9' 84
+    dclicktype 5091 backpack
+    waitforgump 949095101
+    gumpresponse 101
+    waitforgump 949095101
+    gumpresponse 200
+    wait 2000
+    script 'ChainGorget'
+
+elseif skill 'Blacksmith' >= 65 and skill 'Blacksmith' < 70
+    overhead '65-69.9' 84
+    dclicktype 5091 backpack
+    waitforgump 949095101
+    gumpresponse 101
+    waitforgump 949095101
+    gumpresponse 201
+    wait 2000
+    script 'ChainGloves'
+
+elseif skill 'Blacksmith' >= 70 and skill 'Blacksmith' < 75
+    overhead '70-74.9' 84
+    dclicktype 5091 backpack
+    waitforgump 949095101
+    gumpresponse 101
+    waitforgump 949095101
+    gumpresponse 202
+    wait 2000
+    script 'ChainCoif'
+
+elseif skill 'Blacksmith' >= 75 and skill 'Blacksmith' < 85
+    overhead '75-84.9' 84
+    dclicktype 5091 backpack
+    waitforgump 949095101
+    gumpresponse 102
+    waitforgump 949095101
+    gumpresponse 200
+    wait 2000
+    script 'PlateGorget'
+
+elseif skill 'Blacksmith' >= 85 and skill 'Blacksmith' < 90
+    overhead '85-89.9' 84
+    dclicktype 5091 backpack
+    waitforgump 949095101
+    gumpresponse 102
+    waitforgump 949095101
+    gumpresponse 201
+    wait 2000
+    script 'PlateGloves'
+
+elseif skill 'Blacksmith' >= 90 and skill 'Blacksmith' < 95
+    overhead '90-94.9' 84
+    dclicktype 5091 backpack
+    waitforgump 949095101
+    gumpresponse 102
+    waitforgump 949095101
+    gumpresponse 202
+    wait 2000
+    script 'PlateHelm'
+
+elseif skill 'Blacksmith' >= 95 and skill 'Blacksmith' < 100
+    overhead '95-99.9' 84
+    dclicktype 5091 backpack
+    waitforgump 949095101
+    gumpresponse 102
+    waitforgump 949095101
+    gumpresponse 203
+    wait 2000
+    script 'PlateArms'
+
+elseif skill 'Blacksmith' >= 100 and skill 'Blacksmith' < 105
+    overhead '100-104.9' 84
+    dclicktype 5091 backpack
+    waitforgump 949095101
+    gumpresponse 102
+    waitforgump 949095101
+    gumpresponse 204
+    wait 2000
+    script 'PlateLegs'
+
+elseif skill 'Blacksmith' >= 105 and skill 'Blacksmith' < 120
+    overhead '105-119.9' 84
+    dclicktype 5091 backpack
+    waitforgump 949095101
+    gumpresponse 109
+    waitforgump 949095101
+    gumpresponse 200
+    wait 2000
+    script 'RepairKit'
+
+else 
+    
+    for 30
+        overhead 'Congratulations Blacksmith!'
+        wait 250
+        overhead 'Legendary Status'
+    endfor
+    
+endif
